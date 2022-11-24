@@ -17,10 +17,10 @@ Gem::Specification.new do |gem|
   gem.executables   = ['spf-query']
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
-  gem.required_ruby_version = '>= 1.9.1'
+  gem.required_ruby_version = '>= 2.5.0'
 
-  gem.add_dependency "parslet", "~> 1.0"
+  gem.add_dependency "parslet", "~> 2.0"
 
-  gem.add_development_dependency "bundler", "~> 1.6"
-  gem.add_development_dependency "rake", "~> 10.0"
+  gem.add_development_dependency "bundler", "~> 2.3"
+  gem.add_development_dependency "rake", "~> 13.0"
 end
