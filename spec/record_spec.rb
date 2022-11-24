@@ -162,6 +162,12 @@ describe SPF::Query::Record do
       it "should return a Record" do
         expect(subject).to be_kind_of(Record)
       end
+
+      it "should round-trip the record" do
+        reference = %{v=spf1 a mx include:example.org ip4:0.0.0.0 ~all}
+        record = described_class.parse(reference)
+        expect(record.to_s).to eq(reference)
+      end
     end
 
     context "when parsing an invalid record" do

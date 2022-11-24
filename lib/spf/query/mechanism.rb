@@ -40,7 +40,9 @@ module SPF
       def initialize(name,options={})
         @name = name
 
-        @value     = options[:value]
+        # If `value` is blank, make it `nil`.  Empty strings are not valid
+        # values.
+        @value     = options[:value].yield_self { |value| /\A[[:space:]]*\z/ === value ? nil : value }
         @qualifier = options[:qualifier]
       end
 
